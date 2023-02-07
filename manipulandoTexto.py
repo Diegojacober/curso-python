@@ -11,6 +11,8 @@ print(frase[9:])
 # imprime do caracter 9 e vai até o fim
 print(frase[9::3])
 # imprime do 9 até o final pulando a cada 3
+print(frase[::-1])
+# inverte a frase
 len(frase)
 # retorna o tamanho
 frase.count('o')
