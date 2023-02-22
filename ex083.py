@@ -2,7 +2,7 @@ expressao = input('Digite a expressão matemática: ')
 pilha = []
 for caracter in expressao:
     if caracter == '(':
-        pilha.append('()')
+        pilha.append(')')
     elif caracter == ')':
         if len(pilha) > 0:
             pilha.pop()
