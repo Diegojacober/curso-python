@@ -1,6 +1,6 @@
 from random import randint
 numeroUser = int(input('tente adivinhar o numero inteiro: '))
-numeroAleatorio = randint(0, 100)
+numeroAleatorio = randint(0, 1000)
 tentativas = 1
 
 mult = 0
@@ -9,7 +9,7 @@ while True:
     for count in range(2, numeroAleatorio):
         if numeroAleatorio % count == 0:
             mult += 1
-            numeroAleatorio = randint(0, 100)
+            numeroAleatorio = randint(0, 1000)
         mult = 0
         
     if mult == 0:
