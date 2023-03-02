@@ -4,7 +4,7 @@ def carta(dia, mes, ano):
     d = datetime.datetime(ano, mes, dia)
     d2 = datetime.datetime(datetime.date.today().year, current_time.month, current_time.day)
     dias = d2 - d 
-    print(dias.days)
+    print(dias.days, " dias de vida")
     if dias.days >= 6570:
         print('Você pode tirar cnh')
     else:
