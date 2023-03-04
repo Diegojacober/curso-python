@@ -55,7 +55,6 @@ while True:
                 break
         else:
             print(f'\033[31mSeu tempo acabou ☹  -- o número correto era {randNumber} \033[m')
-            print(datetime.datetime.now().microsecond)
             break
     
     if userNumber == randNumber:
