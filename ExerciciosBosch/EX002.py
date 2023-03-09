@@ -1,6 +1,6 @@
 from random import randint
-import datetime, pygame, time
-
+import pygame, time
+#inquirer
 def winMusic():
     pygame.mixer.init()
     pygame.init()
@@ -25,7 +25,6 @@ randNumber = primeNumber()
 userChance = 15
 userLife = 1000
 while True:
-    
     userNumber = int(input('Tente adivinhar o número que eu estou pensando você tem 15 chances ou 1000 pontos de vida: '))
     
     while userNumber != randNumber:
@@ -51,7 +50,6 @@ while True:
                         
             else:
                 print(f'\033[31mSuas tentativas acabaram ☹  -- o número correto era {randNumber} \033[m')
-                print(datetime.datetime.now().microsecond)
                 break
         else:
             print(f'\033[31mSeu tempo acabou ☹  -- o número correto era {randNumber} \033[m')
