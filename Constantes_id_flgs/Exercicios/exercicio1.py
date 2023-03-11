@@ -6,8 +6,8 @@ def digite_int(msg):
         except (ValueError,TypeError):
             print('\033[31mTipo inválido, digite um numero inteiro\033[m')
         else:
-            break
-    return n
+            return n
+    
         
 n = digite_int('Digite um número: ')
 
