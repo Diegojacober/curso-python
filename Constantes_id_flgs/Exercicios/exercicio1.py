@@ -8,7 +8,7 @@ def digite_int(msg):
         else:
             return n
     
-        
+                
 n = digite_int('Digite um número: ')
 
 if n % 2 == 0:
