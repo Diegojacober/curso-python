@@ -86,6 +86,7 @@ def jogo(palavra,dificuldade):
     """
     # armazena quantas vidas o usuário possui
     vidas = 8
+    palavra = 'INTESTINO DELGADO'
     # armazena as letras que o usuario chutou, o indice 0 são as letras corretas, e o indice 1 são as letras erradas
     letras = [[], []]
     dica = 5 if dificuldade == 1 else 3 if dificuldade == 2 else 0 
@@ -104,6 +105,9 @@ def jogo(palavra,dificuldade):
                 try:
                     letras[0].index(letra)
                 except:
+                    if letra == ' ':
+                        print(' ', end=' ')
+                        letras[0].append(' ')
                     print('_', end=' ')
                 else:
                     print(letra, end=' ')
@@ -115,7 +119,7 @@ def jogo(palavra,dificuldade):
                 if dica > 0:
                     letras_nao_chutadas = list()
                     for letra in palavra:
-                        try:
+                        try:                                                      
                             letras[0].index(letra)
                         except:
                             letras_nao_chutadas.append(letra)
