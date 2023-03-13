@@ -6,8 +6,8 @@
 #Listas letras acertadas
 # Modos de jogo: Fácil (Nutella), Médio (Café com Leite), Dificil (Raiz)
 
-Fácil -> Dica a cada vida perdida
-Médio -> Dica a 2 vidas perdidas
+Fácil -> 5 dicas
+Médio -> 3 dicas
 Difícil -> Sem dicas
 """
 import forca
