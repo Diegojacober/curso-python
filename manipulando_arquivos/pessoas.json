@@ -1,0 +1,11 @@
+{
+  "nome": "Diego",
+  "sobrenome": "Alencar Jacober",
+  "idade": 18,
+  "pais": {
+    "mae": "Janete",
+    "pai": "Thiago"
+  },
+  "altura": 1.73,
+  "dev": true
+}
