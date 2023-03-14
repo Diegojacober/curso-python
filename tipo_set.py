@@ -65,4 +65,15 @@ print(s7)
 s8 = s4 ^ s5
 print(s8)
 
+#Exemplo de uso dos sets
+
+letras = set()
+l = 'z'
+while True:
+    letra = input('Digite: ').lower()
+    letras.add(letra) 
+    print(letras)
+    if l in letras:
+        print('PARABÉNS')
+        break
  
