@@ -12,10 +12,11 @@ import inquirer, requests, emoji, random, os
 from PIL import Image
 from time import sleep
 
-PROXIES_BOSCH = {
-    'http' : 'http://ct67ca:23%23INDUSTRIAdigital@proxy.br.bosch.com:8080',
-    'https' : 'https://ct67ca:23%23INDUSTRIAdigital@proxy.br.bosch.com:8080'
-}
+# PROXIES_BOSCH = {
+#     'http' : 'http://ct67ca:23%23INDUSTRIAdigital@proxy.br.bosch.com:8080',
+#     'https' : 'https://ct67ca:23%23INDUSTRIAdigital@proxy.br.bosch.com:8080'
+# }
+
 
 def line(color=30):
     """
@@ -104,7 +105,8 @@ def get_word(level, lang='en'):
         tip = ''
         word = ''
         if level == 'Nutella':
-            request = requests.get(f'http://random-word-api.herokuapp.com/word?length=5&lang={lang}',proxies=PROXIES_BOSCH)
+            # request = requests.get(f'http://random-word-api.herokuapp.com/word?length=5&lang={lang}',proxies=PROXIES_BOSCH)
+            request = requests.get(f'https://random-word-api.herokuapp.com/word?length=5&lang={lang}')
             json = request.json()
             word = json[0]
             try : 
@@ -113,9 +115,10 @@ def get_word(level, lang='en'):
                 print('Não foi encontrada a palavra {} pulando para a proxima'.format(word))
                 continue
             else:
-                return tip,word
+                return word, tip
         elif level == 'Coffe with milk':
-            request = requests.get(f'http://random-word-api.herokuapp.com/word?length=7&lang={lang}',proxies=PROXIES_BOSCH)
+            #request = requests.get(f'http://random-word-api.herokuapp.com/word?length=7&lang={lang}',proxies=PROXIES_BOSCH)
+            request = requests.get(f'https://random-word-api.herokuapp.com/word?length=7&lang={lang}')
             json = request.json()
             word = json[0]
             try : 
@@ -123,9 +126,10 @@ def get_word(level, lang='en'):
             except: 
                 continue
             else:
-                return tip,word
+                return word, tip
         elif level == 'Source':
-            request = requests.get(f'http://random-word-api.herokuapp.com/word?length=10&lang={lang}',proxies=PROXIES_BOSCH)
+            # request = requests.get(f'http://random-word-api.herokuapp.com/word?length=10&lang={lang}',proxies=PROXIES_BOSCH)
+            request = requests.get(f'https://random-word-api.herokuapp.com/word?length=10&lang={lang}')
             json = request.json()
             word = json[0].upper()
             try : 
@@ -133,7 +137,7 @@ def get_word(level, lang='en'):
             except: 
                 continue
             else:
-                return tip,word
+                return word, tip
         elif level == 'Custom':
             print('Welcome to the custom mode, you can add words and tips or play with the registered words')
             option = [
@@ -164,12 +168,21 @@ def get_word(level, lang='en'):
 
 def get_tip(word):
     while True:
-        request = requests.get(f'http://api.dictionaryapi.dev/api/v2/entries/en/{word}',proxies=PROXIES_BOSCH)
+       # request = requests.get(f'http://api.dictionaryapi.dev/api/v2/entries/en/{word}',proxies=PROXIES_BOSCH)
+        request = requests.get(f'https://api.dictionaryapi.dev/api/v2/entries/en/{word}')
         json = request.json()
         return json[0]['meanings'][0]['definitions'][0]['definition']
         
             
 def get_level(name):
+    """Retorna qual o nivel que o usuário deseja jogar
+
+    Args:
+        name (string): nome do usuário
+
+    Returns:
+        level: nivel que o usuário deseja
+    """
     questions = [
     inquirer.List('level',
                   
@@ -182,6 +195,14 @@ def get_level(name):
 
 
 def get_kick(tip):
+    """ Função que captura qual letra o usuário chutou e se necessário mostra a dica
+
+    Args:
+        tip (string): dica da palavra
+
+    Returns:
+        chance: returana o que ele digitou
+    """
     while True:
             chance = input('\n Type it a letter: ').upper().strip()
             if chance.isnumeric() or chance == '' or chance == ' ':
