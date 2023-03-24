@@ -1,0 +1,46 @@
+O QUE SÃO CLASSES?
+
+-  Classes são estruturas, consideradas 'moldes' para novos objetos, a classe define atributos e metodos (funções), que posteriormente podem ser usados nos objetos.
+Os objetos são instâncias da classe.
+
+POR QUÊ EU DEVERIA USAR CLASSES? 
+
+- As classes por serem 'esqueletos' elas ajudam na não repetição de códigos, colaborando na legibilidade do código e facilidade em futuras atualizações
+
+QUAIS SÃO OS PILARES DA POO (Programação Orientada a objetos)
+
+- Abstração
+- Encapsulamento
+- Herança 
+- Polimorfismo
+
+ABSTRAÇÃO:
+ - É o conceito de trazer para vida real, ou seja construir codigos que sejam relacionados com objetos da vida real.
+Os objetos da vida real tem caracteristicas e ações, exatamente o que uma classe tem: atributos e metodos.
+Ao criar uma classe ja estamos fazendo o processo de abstração.
+
+ENCAPSULAMENTO: 
+    - O encapsulamento se refere exatamente ao seu nome, encapsula os dados, os atributos e metodos, deixando-os privados, protegidos ou publicos.
+    geralmente deixamos todos os atributos da classe privados, para não serem manipulados fora da classe e os metodos publicos para poderem serem chamados nos objetos, a partir deste momento entram os Getter e Setters. Os getters são os metodos que retornam os valores dos atributos desejados, e os Setters são os unicos capazes de mudarem o valor do atributo.
+    Geralmente constantes são publicas, para poderem serem lidas de qualquer local.
+
+    public (publico) -> Pode ser acessado pela própria classe, nas suas subclasses e também nas instâncias da mesma.
+    protegida (protected) -> só podem ser manipulados pela classe e pelas subclasses
+    privado (private) -> só podem ser manipulados pela própria classe.
+
+Ex: Imagine que temos uma classe chamada Pessoa os atributos, nome, sobrenome, rg e cpf, todos são privados para não serem alterados diretamente. Para podermos ler os dados, ou altera-los
+utilizaremos os Getters e Setters, que são metodos publicos utilizados para pegar o atributo e alterar o atributo respectivamente, assim podemos fazer verificações antes de qualquer mudança, protegendo o código.
+
+- HERANÇA:
+
+    - Como o proprio nome diz, se da a herdar coisas de outras classes, criando assim subclasses. Subclasses as quais podemos utilizar metodos e atributos da classe mãe, podendo reescreve-los ou não,
+    e também implementar novos em cima dos ja criados.
+
+    Exemplo: A classe Papagaio pode ser uma herança da classe Ave que contém o metodo voar, que também pode ser uma herança da classe Animal que contem o metodo comer.
+
+- POLIMORFISMO:
+
+- O Polimorfismo nada mais é do que especializar metodos de heranças para classes especificas, reescrever os metodos adaptando as necessidades da classe.
+
+Ex: Uma classe mãe chamada ArtigosEsportivos, onde tem um metodo de calcularVenda, ao criar uma subclasse de CamisaDeTime e outra de Chuteira, pode se reescrever o metodo calcularVenda com o mesmo nome
+apenas adaptando para o que é necessário nesse contexto, e caso não a resscreva ela funcionara como na classe mãe.
