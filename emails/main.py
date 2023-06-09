@@ -22,7 +22,7 @@ smtp_user = os.getenv('FROM_EMAIL', '')
 smt_pass = os.getenv('EMAIL_PASSWORD', '')
 
 #Fazer aula 183
-with open(PATH_HTML, 'r') as file:
+with open(PATH_HTML, 'r', encoding='utf-8') as file:
     texto_arquivo = file.read()
     template = Template(texto_arquivo)
     texto_email = template.substitute(nome='Roberto')
