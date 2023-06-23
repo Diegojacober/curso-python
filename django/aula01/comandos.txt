@@ -5,3 +5,11 @@ cria um projeto em uma pasta e joga manage.py na raiz
 django-admin startproject project(nome) .  
 
 rodar servidor: python manage.py runserver
+
+django-admin -> executar comandos do django
+
+django-admin = manage.py, mas antes tem que utilizar o django-admin para criar o manage.py
+
+Se as coisas não conversam entre si se criam outras apps
+
+python manage.py startapp nome -> cria app
