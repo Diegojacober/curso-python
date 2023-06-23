@@ -1,0 +1,7 @@
+cria uma nova pasta com outra pasta que ai tem o projeto em django:
+    django-admin startproject nomeDoProjeto
+
+cria um projeto em uma pasta e joga manage.py na raiz
+django-admin startproject project(nome) .  
+
+rodar servidor: python manage.py runserver
